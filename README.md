@@ -74,12 +74,12 @@ This configuration ensures that both virtual machines are on the same isolated n
 
 ### Step 2: 💡 Configure the Network
 
-To ensure secure and isolated communication between the attacker and target machines, the network was configured using VirtualBox's "Host-Only Adapter" mode. This setup allows both virtual machines to interact with each other without any external internet access — an ideal environment for penetration testing.
+To ensure secure and isolated communication between the attacker and target machine, the network was configured using VirtualBox's "Host-Only Adapter" mode. This setup allows both virtual machines to interact with each other without any external internet access — an ideal environment for penetration testing.
 
 
 🔎 Verifying Connectivity:
 
-Once both virtual machines were configured and running, connectivity was verified using the ping command from each terminal:
+Once both virtual machines were configured and running, connectivity was verified using the Ping command from each terminal:
 
 From Kali Linux:
 
@@ -98,7 +98,7 @@ The successful response from both machines as shown in the screenshot below, con
 
 ---
 
-### Step 3: 🔍 Scan the target with nmap
+### Step 3: 🔍 Scan the target with Nmap
 
 After configuring the network, and performed the ping test to confirming connectivity, I scanned the target Metaspoiltable 2 (192.168.56.102) from Kali to gather intelligence on:
 
@@ -112,8 +112,8 @@ After configuring the network, and performed the ping test to confirming connect
 
 ---
 
-#### 3.1 🔍 Initial Scan with nmap
-   
+#### 3.1 🔍 Initial Scan with Nmap
+  
 To begin the reconnaissance phase, I performed a simple ping scan using Nmap from the attacker machine (Kali Linux). This step was essential to determine whether the target host was active and reachable on the network. The following command was used:
 
 - nmap -sn 192.168.56.102
