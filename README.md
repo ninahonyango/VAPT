@@ -168,7 +168,7 @@ To identify open ports and the corresponding services and versions running on th
 
 - nmap -sV 192.168.56.102
 
-The sV flag enables version detection to determine what service/version is running on each open port.
+The -sV flag enables version detection to determine what service/version is running on each open port.
 
 Scan Result:
 
