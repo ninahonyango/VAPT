@@ -112,7 +112,7 @@ After configuring the network, and performed the ping test to confirming connect
 
 ---
 
-#### 3.1: 🔍 Initial Scan with nmap
+#### 3.1 🔍 Initial Scan with nmap
    
 To begin the reconnaissance phase, I performed a simple ping scan using Nmap from the attacker machine (Kali Linux). This step was essential to determine whether the target host was active and reachable on the network. The following command was used:
 
@@ -126,7 +126,7 @@ Purpose:
 
 - Lay the groundwork for more detailed scanning and enumeration.
 
-The screenshot below shows scan result:
+The screenshot below shows the scan result:
 
 ![Check If The Target Host Is Up & Reachable Screenshot](images/hostIsUp.png)
 
@@ -134,7 +134,7 @@ The screenshot below shows scan result:
 
 ---
 
-#### 3.2: 🔍 Full Port Scan
+#### 3.2 🔍 Full Port Scan
 
 After confirming that the target machine was active, I proceeded with a comprehensive TCP port scan to identify all open ports and potential entry points on the Metasploitable 2 VM (192.168.56.102). The following command was used:
 
@@ -168,11 +168,11 @@ To identify open ports and the corresponding services and versions running on th
 
 - nmap -sV 192.168.56.102
 
--sV: Enables version detection to determine what service/version is running on each open port.
+The sV flag enables version detection to determine what service/version is running on each open port.
 
 ![Screenshot On A Detailed Scan To Detect Service & Version](images/servicedetection.png)
 
-The scan results:
+Scan Result:
 
 #### 📝 Open Ports and Service Analysis:
 
@@ -265,7 +265,7 @@ This step involved exploiting a known vulnerability in vsftpd version 2.3.4, whi
 
 ---
 
-#### 5.1: ✅ Confirming the vsftpd 2.3.4 Service
+#### 5.1 ✅ Confirming the vsftpd 2.3.4 Service
 
 To validate the presence of the vulnerable service, I used nmap’s version detection feature to probe port 21 (FTP) on the target Metaspoiltable machine. The command used:
 
@@ -273,7 +273,7 @@ To validate the presence of the vulnerable service, I used nmap’s version dete
 
 The result confirmed the presence of the vulnerable FTP service:
 
-- "21/tcp open  ftp     vsftpd 2.3.4".
+  "21/tcp open  ftp     vsftpd 2.3.4"
 
 This verification step ensures the correct service is targeted before launching an exploit. Below is the screenshot confirming the result: 
 
@@ -281,7 +281,7 @@ This verification step ensures the correct service is targeted before launching 
 
 ---
 
-#### 5.2: ✅ Launch Metaspoilt Framework
+#### 5.2 ✅ Launch Metaspoilt Framework
 
 After confirming that vsftpd 2.3.4 service is running, I launching the Metaspoit Framework on Kali Linux. This was done by executing the following command in the terminal: 
 
@@ -291,21 +291,26 @@ Refer to the screenshot below for a visual representation of the command executi
 
 ![Launching Metaspoilt Framework Screenshot](images/launchMetaspoilt.png)
 
+
 ---
 
-#### 5.3: ✅ Searching for the Vulnerability Exploit
+#### 5.3 ✅ Searching for the Vulnerability Exploit
 
 After launching Metasploit, I proceeded to search for a known exploit associated with the vulnerable service vsftpd 2.3.4. This was achieved using the following command:
 
+
 - search vsftpd 2.3.4
+
 
 The screenshot below illustrates the output of the search command, highlighting the available exploit module for the specified service (vsftpd 2.3.4):
 
+
 ![Screenshot On Searching For The vsftpd exploit](images/searchExpoilt.png)
+
 
 ---
 
-#### 5.4: ✅: Selecting the Exploit Module
+#### 5.4 ✅ Selecting the Exploit Module
 
 From the search results, I identified and selected the appropriate exploit module for vsftpd 2.3.4, which is: exploit/unix/ftp vsftpd_234_backdoor
 
@@ -319,7 +324,7 @@ This command loads the exploit into the console as shown in the screenshot below
 
 ---
 
-#### 5.5: ✅ Configuring the Target (RHOST) and Local Host (LHOST)
+#### 5.5 ✅ Configuring the Target (RHOST) and Local Host (LHOST)
 
 With the exploit module loaded, I configured the necessary parameters to define the target machine and my local machine for handling the reverse connection.
 
@@ -338,13 +343,13 @@ While attempting to set the local host (LHOST) for reverse connection, the conso
 
 This message confirms that the vsftpd_234_backdoor exploit does not require or support a reverse shell connection. Instead, it opens a command shell directly on a specific port (usually port 6200) on the target system, which Metasploit then connects to.
 
-Therefore, only the target (Metaspoiltable) IP address (RHOST) needs to be configured as shown below
+Therefore, only the target (Metaspoiltable) IP address (RHOST) needs to be configured as shown below:
 
 ![Screenshot On Configuring The Target (RHOST)](images/RHOST.png)
 
 ---
 
-#### 5.6: 🎯 Running the Exploit
+#### 5.6 🎯 Running the Exploit
 
 After setting the target (Kali Linux) IP (RHOST), I executed the exploit using the following command:
 
@@ -371,27 +376,36 @@ Successful Output:
 After successfully executing the vsftpd 2.3.4 exploit, a command shell session was established between the attacker machine (Kali Linux) and the target (Metasploitable 2). The next phase focused on post-exploitation reconnaissance — verifying the level of access obtained and collecting basic system details from the compromised host. The following commands were executed within the active shell session:
 
 - whoami
+
 Output: root
 
 This confirmed that the shell had root-level privileges, providing unrestricted access to the target system.
 
 - hostname
+
 Output: metasploitable
+
 This revealed the name of the target machine, confirming that the session was connected to the intended system.
 
 
 - uname -a
+
 Output: Linux metasploitable 2.6.24-16-server #1 SMP ... i686 GNU/Linux
+
 This provided details about the kernel version and system architecture, helpful for assessing potential privilege escalation vectors (if needed) or system-specific configurations.
 The screenshot below is a visual representation attesting to the verification of the attacker (Kali Linux) access levels.
 
 - id
+
 Output: uid=0(root) gid=0(root)
+
 This confirms That I am running the Metaspoitable sysytem as a superuser.
 
 The screenshot below is a visual representation of the command session established between the attacker system and the target system verifying the acess level:
 
 ![Screenshot On Verifying Access Level](images/privilegeEscalation.png)
+
+---
 
 ### Step 7: 🚀 Privilege Escalation
 
@@ -399,9 +413,12 @@ From step 6 above, we can confirm that the shell has root-level permissions, the
 
 This confirmed that the shell had root-level privileges, providing unrestricted access to the target system. 
 
+---
+
 ## 🏁 Conclusion
 
 This project provided a hands-on demonstration of identifying and exploiting a known vulnerability in the vsftpd 2.3.4 FTP service running on Metasploitable 2. Through the use of tools like nmap and Metasploit, I scanned, enumerated, and exploited a backdoor vulnerability (CVE-2011-2523), ultimately gaining root-level access to the target system. The success of this simulation showcases the critical importance of patching outdated software, securing exposed services, and segmenting networks to prevent unauthorized access.
+
 
 ### 🚀 Findings & Key Takeaways:
 
@@ -422,7 +439,7 @@ The project sharpened practical skills in Metasploit, TCP/IP communication, and 
 
 ### 📝 Remediation Measures:
 
-- To mitigate this vulnerability and prevent similar attacks in production environments, the following steps are recommended:
+To mitigate this vulnerability and prevent similar attacks in production environments, the following steps are recommended:
 
 - Upgrade or Remove Vulnerable Software.
 
@@ -456,7 +473,9 @@ The project sharpened practical skills in Metasploit, TCP/IP communication, and 
 
 - Continuously assess the environment for known vulnerabilities using tools like OpenVAS, Nessus, or Metasploit Pro.
 
-### 📎 Appendices
+---
+
+## 📎 Appendices
 
 #### A. Tools Used
 
@@ -491,5 +510,6 @@ CVE-2011-2523: Backdoor vulnerability in vsftpd 2.3.4 allowing remote attackers 
 | whoami / id                 | Check current user and privileges    |
 | uname -a                    | View kernel and OS version           | 
 
+---
 
 
