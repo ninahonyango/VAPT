@@ -37,7 +37,7 @@ This project demonstrates how I identified and exploited a known vulnerability i
 
 ## 📖 Steps Taken
 
-1. Set up a virtual Lab (Environment Prep).
+1. Set up a Virtual Lab (Environment Prep).
 
 2. Configure the Network Setup.
 
@@ -170,9 +170,9 @@ To identify open ports and the corresponding services and versions running on th
 
 The sV flag enables version detection to determine what service/version is running on each open port.
 
-![Screenshot On A Detailed Scan To Detect Service & Version](images/servicedetection.png)
-
 Scan Result:
+
+![Screenshot On A Detailed Scan To Detect Service & Version](images/servicedetection.png)
 
 #### 📝 Open Ports and Service Analysis:
 
@@ -390,7 +390,7 @@ This revealed the name of the target machine, confirming that the session was co
 
 - uname -a
 
-Output: Linux metasploitable 2.6.24-16-server #1 SMP ... i686 GNU/Linux
+Output: Linux metasploitable 2.6.24-16-server #1 SMP Thur Apr 10 13:56:00 UTC 2008 i686 GNU/Linux
 
 This provided details about the kernel version and system architecture, helpful for assessing potential privilege escalation vectors (if needed) or system-specific configurations.
 The screenshot below is a visual representation attesting to the verification of the attacker (Kali Linux) access levels.
