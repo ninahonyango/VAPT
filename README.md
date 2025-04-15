@@ -74,16 +74,7 @@ This configuration ensures that both virtual machines are on the same isolated n
 
 ### Step 2: 💡 Configure the Network
 
-To ensure secure and isolated communication between the attacker and target machines, the network was configured using VirtualBox's "Internal Network" mode. This setup allows both virtual machines to interact with each other without any external internet access — an ideal environment for penetration testing.
-
-
-🔧 Configuration Details:
-
-Network Mode: Internal Network (intnet)
-
-Attacker Machine (Kali Linux): 192.168.56.101 (Static IP)
-
-Target Machine (Metasploitable 2): 192.168.56.102 (Static IP)
+To ensure secure and isolated communication between the attacker and target machines, the network was configured using VirtualBox's "Host-Only Adapter" mode. This setup allows both virtual machines to interact with each other without any external internet access — an ideal environment for penetration testing.
 
 
 🔎 Verifying Connectivity:
@@ -137,7 +128,7 @@ Purpose:
 
 The screenshot below shows scan result:
 
-![Check If The Target Host Is Up & Reachable Screenshot](images/HostIsUp.png)
+![Check If The Target Host Is Up & Reachable Screenshot](images/hostIsUp.png)
 
 - The output confirmed that the host was up and reachable, allowing further enumeration steps to proceed.
 
@@ -161,9 +152,9 @@ Purpose:
 
 Scan Result:
 
-![Full Port Scan Screenshot](images/FullPortScan.png)
+![Full Port Scan Screenshot](images/fullPortScan.png)
 
-![Continued Full Port Scan Screenshot](images/FullPortScan2.png)
+![Continued Full Port Scan Screenshot](images/fullPortScan2.png)
 
 - From the result in the screenshots above, we can see the nmap scan report which confirms that the scan is working properly, and also which    ports are open and reachable. With this report, I now know which services to target.
 
@@ -263,9 +254,8 @@ The scan results:
 
 - OS & Service Fingerprints: Unix/Linux-based services, CPE: cpe:/o:linux:linux_kernel
 
----
 
-Clearly as illustrated above, nmap have detected quite a number of vulnerabilities in Metaspoitable 2. With this, we can perform CVE to identify the vulnerabilities severity levels, and exploit the identified vulnerabilities as well.
+Clearly as illustrated above, nmap has detected quite a number of vulnerabilities in Metaspoitable 2. With this, we can perform CVE to identify the vulnerabilities severity levels, and exploit the identified vulnerabilities as well.
 
 ---
 
@@ -311,7 +301,7 @@ After launching Metasploit, I proceeded to search for a known exploit associated
 
 The screenshot below illustrates the output of the search command, highlighting the available exploit module for the specified service (vsftpd 2.3.4):
 
-![Screenshot On Searching For The vsftpd exploit](images/searchExploit.png)
+![Screenshot On Searching For The vsftpd exploit](images/searchExpoilt.png)
 
 ---
 
