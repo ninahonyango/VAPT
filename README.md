@@ -423,18 +423,23 @@ This project provided a hands-on demonstration of identifying and exploiting a k
 ### 🚀 Findings & Key Takeaways:
 
 - Critical Impact of Known Vulnerabilities
+
 This project highlighted how a well-documented vulnerability like vsftpd 2.3.4 can be exploited using Metasploit to gain unauthorized root access—emphasizing the danger of running outdated software.
 
 - Ease of Exploitation with Public Tools
+
 The exploitation process required no custom payloads, only a few Metasploit commands, proving how simple it can be for attackers to exploit vulnerable services using publicly available tools.
 
 - Importance of Enumeration and Exploit Selection
+
 Using the correct module and understanding how it behaves (e.g., no LHOST needed) was critical to a successful attack. This reinforces the importance of thorough enumeration and module knowledge in penetration testing.
 
 - Real-World Relevance for Blue Teaming
+
 This exercise reflects a real-world scenario that blue teams must defend against. It shows how vital it is to have vulnerability scanning, patch management, and monitoring mechanisms in place.
 
 - Hands-On Skills Application
+
 The project sharpened practical skills in Metasploit, TCP/IP communication, and post-exploitation enumeration, and helped reinforce offensive techniques useful for defensive roles like SOC analyst or blue team engineer.
 
 ### 📝 Remediation Measures:
