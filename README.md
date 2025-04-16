@@ -173,6 +173,7 @@ The -sV flag enables version detection to determine what service/version is runn
 Scan Result:
 
 ![Screenshot On A Detailed Scan To Detect Service & Version](images/servicedetection.png)
+![Screenshot On A Detailed Scan To Detect Service & Version](images/servicedetection2.png)
 
 #### 📝 Open Ports and Service Analysis:
 
@@ -287,10 +288,10 @@ After confirming that vsftpd 2.3.4 service is running, I launching the Metaspoit
 
 - msfconsole
 
-Refer to the screenshot below for a visual representation of the command execution and the successful launch of the Metasploit console.
+Refer to the screenshots below for a visual representation of the command execution and the successful launch of the Metasploit console.
 
 ![Launching Metaspoilt Framework Screenshot](images/launchMetaspoilt.png)
-
+![Launching Metaspoilt Framework Screenshot](images/launchMetaspoilt2.png)
 
 ---
 
@@ -305,7 +306,7 @@ After launching Metasploit, I proceeded to search for a known exploit associated
 The screenshot below illustrates the output of the search command, highlighting the available exploit module for the specified service (vsftpd 2.3.4):
 
 
-![Screenshot On Searching For The vsftpd exploit](images/searchExpoilt.png)
+![Screenshot On Searching For The vsftpd exploit](images/searchExploit.png)
 
 
 ---
