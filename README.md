@@ -524,7 +524,7 @@ To mitigate this vulnerability and prevent similar attacks in production environ
 
 ## 📎 Appendices
 
-  #### A. Tools Used
+  ### A. Tools Used
 
   | Tool             | Purpose                     |
   |-----------------|-----------------------------------|
@@ -536,7 +536,7 @@ To mitigate this vulnerability and prevent similar attacks in production environ
   | Ping             | Connectivity and port checks             |      
 
 
-  #### B. IP Address Mapping
+  ### B. IP Address Mapping
 
   | System             | IP Address                     |
   |-------------------|----------------------------------|
@@ -544,12 +544,12 @@ To mitigate this vulnerability and prevent similar attacks in production environ
   | Metasploitable2       | 192.168.56.102       |
 
 
-  #### C. CVE Reference
+  ### C. CVE Reference
 
   CVE-2011-2523: Backdoor vulnerability in vsftpd 2.3.4 allowing remote attackers to gain a command shell via a crafted username.
 
 
-  #### D. Useful Commands Cheat Sheet
+  ### D. Useful Commands Cheat Sheet
 
   | Command                     |Description                     |
   |----------------------------|--------------------------------|
