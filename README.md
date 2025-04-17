@@ -311,7 +311,7 @@ nmap -sV -p 21 192.168.56.101
 
 The result confirmed the presence of the vulnerable FTP service:
 
-  ```21/tcp open  ftp     vsftpd 2.3.4"```
+  ```21/tcp open  ftp     vsftpd 2.3.4```
 
 This verification step ensures the correct service is targeted before launching an exploit as shown below: 
 
@@ -384,7 +384,7 @@ As illustrated in the screenshot below:
 ![Screenshot On Configuring The Target (RHOST) And Local Host (LHOST)](images/setRHOST&LHOSTParameters.png)
 *Screenshot On Configuring The Target (RHOST) And Local Host (LHOST).*
 
-While attempting to set the local host (LHOST) for reverse connection as shown in the screenshot above, the console returned a warning message `[!] Unknown datastore option: LHOST. Did you mean RHOST` indicating that the selected module does not support the LHOST option.
+While attempting to set the local host (LHOST) for reverse connection as shown in the screenshot above, the console returned a warning message `[!] Unknown datastore option: LHOST. Did you mean RHOST?` indicating that the selected module does not support the LHOST option.
 
 This message confirms that the vsftpd_234_backdoor exploit does not require or support a reverse shell connection. Instead, it opens a command shell directly on a specific port (usually port 6200) on the target system, which Metasploit then connects to.
 
@@ -416,7 +416,7 @@ Successful Output:
 
   - The session runs with root privileges, as indicated by the UID/GID output: UID: uid=0(root) gid=0(root)
 
-  - The shell session was established from the attacker's (Kali Linux) IP (192.168.56.101) to the target (Metaspoiltable) IP (192.168.56.102) over a dynamic high port (36837 -> 6200).
+  - The shell session was established from the attacker's (Kali Linux) IP (192.168.56.101) to the target (Metaspoiltable) IP (192.168.56.102) over a dynamic high port (35803 -> 6200).
 
 ---
 
