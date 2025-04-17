@@ -450,7 +450,7 @@ The following commands were executed within the active shell session:
 
      Output: uid=0(root) gid=0(root)
 
-    This confirms That I am running the Metaspoitable sysytem as a superuser.
+    This confirms that I am running the Metaspoitable sysytem as a superuser.
 
 The screenshot below is a visual representation of the command session established between the attacker system and the target system verifying the access level:
 
