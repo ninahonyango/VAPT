@@ -100,13 +100,13 @@ After configuring the network, and performed the ping test to confirming connect
 
 Scanned the target Metaspoiltable 2 (192.168.56.102) from Kali terminal to gather intelligence on:
 
--Open ports.
+1. Open ports.
 
--Services running.
+2. Services running.
 
--Operating system detection.
+3. Operating system detection.
 
--Possible vulnerabilities.
+4. Possible vulnerabilities.
 
 ---
 
