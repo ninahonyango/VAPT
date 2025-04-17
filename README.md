@@ -522,42 +522,41 @@ To mitigate this vulnerability and prevent similar attacks in production environ
 
 ## 📎 Appendices
 
-   #### A. Tools Used
+  #### A. Tools Used
 
-    | Tool             | Purpose                     |
-    |-----------------|-----------------------------------|
-    | Nmap             | Network and port scanning                |
-    | Metaspoilt       | Exploitation and post-exploitation       |
-    | Kali Linux       | Attacker system                          |
-    | Metasploitable 2 | Deliberately vulnerable target system    |
-    | Virtual Box      | Virtual lab environment                  |
-    | Ping             | Connectivity and port checks             |      
-
-
-   #### B. IP Address Mapping
-
-    | System             | IP Address                     |
-    |-------------------|----------------------------------|
-    | Kali Linux            | 192.168.56.101       |
-    | Metasploitable2       | 192.168.56.102       |
+  | Tool             | Purpose                     |
+  |-----------------|-----------------------------------|
+  | Nmap             | Network and port scanning                |
+  | Metaspoilt       | Exploitation and post-exploitation       |
+  | Kali Linux       | Attacker system                          |
+  | Metasploitable 2 | Deliberately vulnerable target system    |
+  | Virtual Box      | Virtual lab environment                  |
+  | Ping             | Connectivity and port checks             |      
 
 
-   #### C. CVE Reference
+  #### B. IP Address Mapping
 
-    - CVE-2011-2523: Backdoor vulnerability in vsftpd 2.3.4 allowing remote attackers to gain a command shell via a     crafted username.
+  | System             | IP Address                     |
+  |-------------------|----------------------------------|
+  | Kali Linux            | 192.168.56.101       |
+  | Metasploitable2       | 192.168.56.102       |
+
+
+  #### C. CVE Reference
+
+  CVE-2011-2523: Backdoor vulnerability in vsftpd 2.3.4 allowing remote attackers to gain a command shell via a crafted username.
 
 
   #### D. Useful Commands Cheat Sheet
 
-    | Command                     |Description                     |
-    |----------------------------|--------------------------------|
-    | nmap -sn [target]           | Host discovery                       |
-    | nmap -p- [target]           | Full port scan                       |
-    | nmap -sV -p [port] [target] | Service/version detection            |
-    | searchsploit [term]         | Search for known exploits            |
-    | whoami / id                 | Check current user and privileges    |
-    | uname -a                    | View kernel and OS version           | 
+  | Command                     |Description                     |
+  |----------------------------|--------------------------------|
+  | nmap -sn [target]           | Host discovery                       |
+  | nmap -p- [target]           | Full port scan                       |
+  | nmap -sV -p [port] [target] | Service/version detection            |
+  | searchsploit [term]         | Search for known exploits            |
+  | whoami / id                 | Check current user and privileges    |
+  | uname -a                    | View kernel and OS version           | 
 
 ---
-
 
