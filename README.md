@@ -351,7 +351,7 @@ search vsftpd 2.3.4
 
 From the search results, I identified and selected the appropriate exploit module for vsftpd 2.3.4, which is ```exploit/unix/ftp vsftpd_234_backdoor```
 
-To use the module, I entered the following command:
+To use the module, following command was executed:
 
 ```
 use exploit/unix/ftp/vsftpd_234_backdoor
@@ -379,10 +379,12 @@ RHOST: IP address of the target system (Metaspoiltable 2) running vsftpd 2.3.4
 
 LHOST: IP address of the attacking machine (Kali Linux)
 
-While attempting to set the local host (LHOST) for reverse connection, the console returned a warning message as illustrated in the screenshot below, indicating that the selected module does not support the LHOST option as shown in the screenshot below:
+As illustrated in the screenshot below:
 
 ![Screenshot On Configuring The Target (RHOST) And Local Host (LHOST)](images/setRHOST&LHOSTParameters.png)
 *Screenshot On Configuring The Target (RHOST) And Local Host (LHOST).*
+
+While attempting to set the local host (LHOST) for reverse connection as shown in the screenshot above, the console returned a warning message `[!] Unknown datastore option: LHOST. Did you mean RHOST` indicating that the selected module does not support the LHOST option.
 
 This message confirms that the vsftpd_234_backdoor exploit does not require or support a reverse shell connection. Instead, it opens a command shell directly on a specific port (usually port 6200) on the target system, which Metasploit then connects to.
 
@@ -395,7 +397,7 @@ Therefore, only the target (Metaspoiltable) IP address (RHOST) needs to be confi
 
 #### 5.6 🎯 Running the Exploit
 
-After setting the target Metaspoitable 2 IP (RHOST), I executed the exploit by running:
+After setting the target Metaspoitable 2 IP (RHOST), the exploit was exceuted by running:
 
 ```
 run
