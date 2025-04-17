@@ -455,7 +455,7 @@ The following commands were executed within the active shell session:
 The screenshot below is a visual representation of the command session established between the attacker system and the target system verifying the access level:
 
 ![Screenshot On Verifying Access Level](images/privilegeEscalation.png)
-*Visual representation of the command session establised with acsess level verified to the highest.*
+*Visual representation of the command session establised with access verified as root level.*
 
 ---
 
