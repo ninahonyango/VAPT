@@ -98,7 +98,7 @@ The successful response from both machines as shown in the screenshot below, con
 
 After configuring the network, and performed the ping test to confirming connectivity, I began reconnaissance (information gathering).
 
-I scanned the target Metaspoiltable 2 (192.168.56.102) from Kali terminal to gather intelligence on:
+Scanned the target Metaspoiltable 2 (192.168.56.102) from Kali terminal to gather intelligence on:
 
 -Open ports.
 
