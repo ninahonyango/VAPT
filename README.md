@@ -540,8 +540,8 @@ To mitigate this vulnerability and prevent similar attacks in production environ
 
   | System             | IP Address                     |
   |-------------------|----------------------------------|
-  | Kali Linux            | 192.168.56.101       |
-  | Metasploitable2       | 192.168.56.102       |
+  | Kali Linux            | `192.168.56.101`       |
+  | Metasploitable2       | `192.168.56.102`       |
 
 
   ### C. CVE Reference
@@ -553,12 +553,12 @@ To mitigate this vulnerability and prevent similar attacks in production environ
 
   | Command                     |Description                     |
   |----------------------------|--------------------------------|
-  | nmap -sn [target]           | Host discovery                       |
-  | nmap -p- [target]           | Full port scan                       |
-  | nmap -sV -p [port] [target] | Service/version detection            |
-  | searchsploit [term]         | Search for known exploits            |
-  | whoami / id                 | Check current user and privileges    |
-  | uname -a                    | View kernel and OS version           | 
+  | `nmap -sn [target]`           | Host discovery                       |
+  | `nmap -p- [target]`           | Full port scan                       |
+  | `nmap -sV -p [port] [target]` | Service/version detection            |
+  | `searchsploit [term]`         | Search for known exploits            |
+  | `whoami / id`                 | Check current user and privileges    |
+  | `uname -a`                    | View kernel and OS version           | 
 
 ---
 
