@@ -331,7 +331,7 @@ msfconsole
 
 #### 5.3 ✅ Searching for the Vulnerability Exploit
 
-After launching Metasploit Framework, a search for a known exploit associated with the vulnerable service vsftpd 2.3.4 is done. This was achieved by running in the Metaspoilt console:
+After launching Metasploit Framework, a search for a known exploit associated with the vulnerable service vsftpd 2.3.4 is done. This was achieved by running:
 
 ```
 search vsftpd 2.3.4
@@ -346,7 +346,7 @@ search vsftpd 2.3.4
 
 From the search results, the appropriate exploit module for vsftpd 2.3.4, which is ```exploit/unix/ftp vsftpd_234_backdoor``` was identified and selected.
 
-To use the module, following command was executed:
+To use the module, the following command was executed:
 
 ```
 use exploit/unix/ftp/vsftpd_234_backdoor
