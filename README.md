@@ -96,7 +96,7 @@ The successful response from both machines as shown in the screenshot below, con
 
 ### Step 3: 🔍 Scan the target with Nmap
 
-After configuring the network, and performed the ping test to confirm connectivity, I began reconnaissance (information gathering) by scanning the target Metaspoiltable 2 (192.168.56.102) from Kali terminal to gather intelligence on:
+After configuring the network and confirming connectivity, I began reconnaissance (information gathering) by scanning the target Metaspoiltable 2 (192.168.56.102) from Kali terminal to gather intelligence on:
 
 1. Open ports.
 
