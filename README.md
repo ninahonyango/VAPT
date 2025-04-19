@@ -29,7 +29,7 @@ This project demonstrates how I identified and exploited a known vulnerability i
 
 - Analyze scan reports.
 
-- Exploit vsftpd 2.3.4 Backdoor Vulnerability (CVE-2011-2523).
+- Exploit vsftpd 2.3.4 backdoor vulnerability (CVE-2011-2523).
 
 - Recommend mitigation strategies.
 
@@ -45,9 +45,9 @@ This project demonstrates how I identified and exploited a known vulnerability i
 
 4. Analyze Open Ports and Identify Vulnerabilities.
 
-5. Exploiting vsftpd 2.3.4 Backdoor Vulnerability (CVE-2011-2523).
+5. Exploit vsftpd 2.3.4 Backdoor Vulnerability (CVE-2011-2523).
 
-6. Validating Access and System Information in the Exploited System.
+6. Validate Access and System Information in the Exploited System.
 
 7. Privilege Escalation.
 
@@ -96,9 +96,7 @@ The successful response from both machines as shown in the screenshot below, con
 
 ### Step 3: 🔍 Scan the target with Nmap
 
-After configuring the network, and performed the ping test to confirming connectivity, I began reconnaissance (information gathering).
-
-Scanned the target Metaspoiltable 2 (192.168.56.102) from Kali terminal to gather intelligence on:
+After configuring the network, and performed the ping test to confirm connectivity, I began reconnaissance (information gathering) by scanning the target Metaspoiltable 2 (192.168.56.102) from Kali terminal to gather intelligence on:
 
 1. Open ports.
 
@@ -112,7 +110,7 @@ Scanned the target Metaspoiltable 2 (192.168.56.102) from Kali terminal to gathe
 
 #### 3.1 🔍 Initial Scan with Nmap
   
-To begin the reconnaissance phase, I performed a simple ping scan using ```nmap``` from the attacker machine (Kali Linux). This step was essential to determine whether the target host Metaspoitable 2 was active and reachable on the network. The following command was used:
+To begin the reconnaissance phase, a simple ping scan was performed using ```nmap``` from the attacker machine (Kali Linux). This step was essential to determine whether the target host Metaspoitable 2 was active and reachable on the network. The following command was used:
 
 ```
 nmap -sn 192.168.56.102
@@ -129,7 +127,7 @@ Purpose:
 The screenshot below shows the scan result:
 
 ![Check If The Target Host Is Up & Reachable Screenshot](images/hostIsUp.png)
-*Screenshot checking if the target host Metaspoitable2 is active and reachable.*
+*Screenshot checking if the target host Metaspoitable2 is active.*
 
 - The output confirmed that the host was up and reachable, allowing further enumeration steps to proceed.
 
@@ -137,7 +135,7 @@ The screenshot below shows the scan result:
 
 #### 3.2 🔍 Full Port Scan
 
-After confirming that the target machine was active, I proceeded with a comprehensive TCP port scan to identify all open ports, and potential entry points on the Metasploitable 2 VM (192.168.56.102). The following command was used:
+After confirming that the target machine is active, I proceeded with a comprehensive TCP port scan to identify all open ports, and potential entry points on the Metasploitable 2 VM (192.168.56.102). The following command was used:
 
 ```
 nmap -p- 192.168.56.102
@@ -160,7 +158,7 @@ Scan Result:
 ![Continued Full Port Scan Screenshot](images/fullPortScan2.png)
 *The screenshots above show results of the full port scan performed on the target Metaspoitable 2 via Kali terminal.*
 
-- From the result above, I confirmed that the scan is working properly, and also which ports are open and reachable. With this report, I knew which services to target.
+- From the result above, we can confirm that the scan is working properly, and also which ports are open and reachable. With this, we know which services to target.
 
 ---
 
@@ -272,7 +270,6 @@ The scan result above was analyzed as follows:
 
     Often runs Tomcat Manager interface. Vulnerable to default credentials and war file deployment for RCE.
 
----
 
 The scan also showed:
 
@@ -287,13 +284,13 @@ The scan also showed:
    - OS & Service Fingerprints: Unix/Linux-based services, CPE: cpe:/o:linux:linux_kernel
 
 
-Clearly as illustrated above, ```nmap``` detected quite a number of vulnerabilities in Metaspoitable 2. With this, we can perform CVE to identify the vulnerabilities severity levels, and exploit the identified vulnerabilities as well, depending on the specified project's scope.
+As illustrated above, ```nmap``` detected quite a number of vulnerabilities in Metaspoitable 2. With this, we can perform CVE to identify the vulnerabilities severity levels, and exploit the identified vulnerabilities as well, depending on the specified project's scope.
 
 The scan revealed several open ports, including port 21 (FTP), which is known to run the vulnerable vsftpd 2.3.4 service on Metasploitable 2. This finding facilitates the subsequent stages of exploiting the vsftpd 2.3.4 backdoor vulnerability.
 
 ---
 
-### Step 5: 🛠️ Exploiting vsftpd 2.3.4 Backdoor Vulnerability (CVE-2011-2523)
+### Step 5:  M- ️ Exploiting vsftpd 2.3.4 Backdoor Vulnerability (CVE-2011-2523)
 
 This step involved exploiting a known vulnerability in vsftpd version 2.3.4, which is a backdoor introduced in a malicious version of the software. The backdoor allows unauthenticated attackers to obtain a remote shell with root privileges.
 
@@ -301,7 +298,7 @@ This step involved exploiting a known vulnerability in vsftpd version 2.3.4, whi
 
 #### 5.1 ✅ Confirming the vsftpd 2.3.4 Service
 
-To validate the presence of the vulnerable service, I used nmap’s version detection feature to probe port 21 (FTP) on the target Metaspoiltable machine. 
+To validate the presence of the vulnerable service, nmap’s version detection feature was used to probe port 21 (FTP) on the target Metaspoiltable machine. 
 
 The command used:
 
@@ -313,16 +310,16 @@ The result confirmed the presence of the vulnerable FTP service:
 
   ```21/tcp open  ftp     vsftpd 2.3.4```
 
-This verification step ensures the correct service is targeted before launching an exploit as shown below: 
-
 ![Screenshot On Confirming The vsftpd 2.3.4 Service](images/confirmvsftpdService.png)
 *Screenshot on confirming the presence of vsftpd 2.3.4 service via Kali terminal.*
+
+This verification step ensures the correct service is targeted before launching an exploit.
 
 ---
 
 #### 5.2 ✅ Launch Metaspoilt Framework
 
-After confirming that vsftpd 2.3.4 service is running, I launched the Metaspoit Framework on Kali Linux. This was done by executing the following command in Kali terminal: 
+After confirming that vsftpd 2.3.4 service is running, we launch Metaspoit Framework on Kali Linux. This was done by executing the following command: 
 
 ```
 msfconsole
@@ -336,7 +333,7 @@ msfconsole
 
 #### 5.3 ✅ Searching for the Vulnerability Exploit
 
-After launching Metasploit Framework, I proceeded to search for a known exploit associated with the vulnerable service vsftpd 2.3.4. This was achieved running:
+After launching Metasploit Framework, search for a known exploit associated with the vulnerable service vsftpd 2.3.4. This was achieved by running in the Metaspoilt console:
 
 ```
 search vsftpd 2.3.4
@@ -349,7 +346,7 @@ search vsftpd 2.3.4
 
 #### 5.4 ✅ Selecting the Exploit Module
 
-From the search results, I identified and selected the appropriate exploit module for vsftpd 2.3.4, which is ```exploit/unix/ftp vsftpd_234_backdoor```
+From the search results, the appropriate exploit module for vsftpd 2.3.4, which is ```exploit/unix/ftp vsftpd_234_backdoor``` was identified and selected.
 
 To use the module, following command was executed:
 
@@ -366,7 +363,7 @@ This command loads the exploit into the console as shown in the screenshot below
 
 #### 5.5 ✅ Configuring the Target (RHOST) and Local Host (LHOST)
 
-With the exploit module loaded, I configured the necessary parameters to define the target machine and my local machine for handling the reverse connection, by running:
+With the exploit module loaded, necessary parameters to define the target machine and my local machine for handling the reverse connection were configured by running:
 
 ```
 set RHOST 192.168.56.102
@@ -397,7 +394,7 @@ Therefore, only the target (Metaspoiltable) IP address (RHOST) needs to be confi
 
 #### 5.6 🎯 Running the Exploit
 
-After setting the target Metaspoitable 2 IP (RHOST), the exploit was exceuted by running:
+After setting the target Metaspoitable 2 IP (RHOST), the exploit was executed by running:
 
 ```
 run
@@ -562,3 +559,5 @@ To mitigate this vulnerability and prevent similar attacks in production environ
 
 ---
 
+
+> *Click [here](https://github.com/ninahonyango/Elizabeth_P_A_Onyango) to go back to Portfolio.*
