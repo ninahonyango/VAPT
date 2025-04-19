@@ -306,9 +306,7 @@ The command used:
 nmap -sV -p 21 192.168.56.101
 ```
 
-The result confirmed the presence of the vulnerable FTP service:
-
-  ```21/tcp open  ftp     vsftpd 2.3.4```
+The result confirmed the presence of the vulnerable FTP service ```21/tcp open  ftp     vsftpd 2.3.4``` as shown below:
 
 ![Screenshot On Confirming The vsftpd 2.3.4 Service](images/confirmvsftpdService.png)
 *Screenshot on confirming the presence of vsftpd 2.3.4 service via Kali terminal.*
