@@ -317,7 +317,7 @@ This verification step ensures the correct service is targeted before launching 
 
 #### 5.2 ✅ Launch Metaspoilt Framework
 
-After confirming that vsftpd 2.3.4 service is running, we launch Metaspoit Framework on Kali Linux. This was done by executing the following command: 
+After confirming that vsftpd 2.3.4 service is running, I proceeded to launch Metaspoit Framework on Kali Linux. This was done by executing the following command: 
 
 ```
 msfconsole
@@ -331,7 +331,7 @@ msfconsole
 
 #### 5.3 ✅ Searching for the Vulnerability Exploit
 
-After launching Metasploit Framework, search for a known exploit associated with the vulnerable service vsftpd 2.3.4. This was achieved by running in the Metaspoilt console:
+After launching Metasploit Framework, a search for a known exploit associated with the vulnerable service vsftpd 2.3.4 is done. This was achieved by running in the Metaspoilt console:
 
 ```
 search vsftpd 2.3.4
