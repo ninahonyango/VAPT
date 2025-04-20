@@ -17,7 +17,7 @@ This project demonstrates how I identified and exploited a known vulnerability i
 
 - **Nmap**.
 
-- **Metasploit Framework**
+- **Metasploit Framework**.
 
 ---
 
@@ -79,7 +79,7 @@ To ensure secure and isolated communication between the attacker and target mach
 
 #### 🔎 Verifying Connectivity:
 
-Once both virtual machines were configured and running, connectivity was verified using the Ping command from Kali terminal:
+Once both virtual machines were configured and running, connectivity was verified by pinging Metaspoiltable2 from Kali terminal:
 
 ```
 ping 192.168.56.102
@@ -271,7 +271,7 @@ The scan result above was analyzed as follows:
     Often runs Tomcat Manager interface. Vulnerable to default credentials and war file deployment for RCE.
 
 
-The scan also showed:
+The scan also detected:
 
 #### 🖥️ Target Host Information:
 
