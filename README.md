@@ -66,15 +66,15 @@ This project demonstrates how I identified and exploited a known vulnerability i
 | Attacker IP     | `192.168.56.101`                                          |
 | Target IP       | `192.168.56.102`                                          |      
 
-This configuration ensures that both virtual machines are on the same isolated network segment, enabling seamless communication between the attacker (Kali Linux) and the target (Metasploitable2) while keeping the setup secure from external threats.
-
 ---
 
 ### Step 2: Network Configuration
 
-To ensure secure and isolated communication between the attacker and target machine, the network was configured using VirtualBox's "Host-Only Adapter" mode. This setup allows both virtual machines to interact with each other without any external internet access — an ideal environment for penetration testing.
+To ensure secure and isolated communication between the attacker and target machine, the network was configured using VirtualBox's "Host-Only Adapter" mode.
 
-Once both virtual machines were configured and running, connectivity was verified by pinging Metaspoiltable2 IP from Kali terminal:
+This setup allows both virtual machines to interact with each other without any external internet access, an ideal environment for penetration testing.
+
+Once both virtual machines were configured and running, connectivity was verified by pinging Metasploiltable2 IP from Kali terminal:
 
 ```
 ping 192.168.56.102
@@ -172,8 +172,6 @@ Scan Result:
 *The screenshots above show a detailed scan with service & version detection.*
 
 The scan result above was analyzed as follows:
-
-#### 📝 Open Ports and Service Analysis:
 
   - **21/tcp (FTP) – vsftpd 2.3.4**
    
