@@ -264,9 +264,7 @@ The scan result above was analyzed as follows:
     Often runs Tomcat Manager interface. Vulnerable to default credentials and war file deployment for RCE.
 
 
-The scan also detected:
-
-#### 🖥️ Target Host Information:
+The scan also detected Metasploitable2 information:
 
    - Operating System: Linux (Oracle VirtualBox VM)
 
